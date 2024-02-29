@@ -1,0 +1,82 @@
+{
+  "notes": [
+    {
+      "title": "Yoshi's birthday bash",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "category": "reminders",
+      "id": "1"
+    },
+    {
+      "title": "Complete my ninja training",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
+      "category": "work",
+      "id": "2"
+    },
+    {
+      "title": "Order a pizza!",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "category": "todos",
+      "id": "3"
+    },
+    {
+      "id": "dd79",
+      "title": "poop",
+      "details": "pee",
+      "category": "todos"
+    },
+    {
+      "id": "09fa",
+      "title": "lading",
+      "details": "loadinggg",
+      "category": "reminders"
+    },
+    {
+      "id": "0d68",
+      "title": "lading",
+      "details": "loadinggg",
+      "category": "reminders"
+    },
+    {
+      "id": "dffa",
+      "title": "lading",
+      "details": "loadinggg",
+      "category": "reminders"
+    },
+    {
+      "id": "89ca",
+      "title": "submit function",
+      "details": " a test loadinggg",
+      "category": "reminders"
+    },
+    {
+      "id": "0b8c",
+      "title": "timeout 02",
+      "details": "ok",
+      "category": "todos"
+    },
+    {
+      "id": "4d01",
+      "title": "so COOOL1`",
+      "details": "ok ha",
+      "category": "reminders"
+    },
+    {
+      "id": "e599",
+      "title": "so COOOL1` 01",
+      "details": "ok ha",
+      "category": "todos"
+    },
+    {
+      "id": "e650",
+      "title": "poop navigate",
+      "details": "navigate",
+      "category": "work"
+    },
+    {
+      "id": "3634",
+      "title": "ok",
+      "details": " come on",
+      "category": "todos"
+    }
+  ]
+}

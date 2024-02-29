@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material";
 import { purple } from "@mui/material/colors";
-
+// orangePrimary
 const orangePrimary = {
   50: "#fff7e2",
   100: "#ffe9b5",
@@ -13,7 +13,7 @@ const orangePrimary = {
   800: "#fa8a20",
   900: "#f96b1d",
 };
-
+// errorOrangeRed
 const errorOrangeRed = {
   50: "#faebe9",
   100: "#fed0c2",

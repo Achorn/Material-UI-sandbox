@@ -11,16 +11,20 @@ import {
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
+  const navigate = useNavigate();
   const field = { mt: "20px", mb: "20px", display: "block" };
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
   const [category, setCategory] = useState("todos");
+  const [submitError, setSubmitError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     setDetailsError(false);
     setTitleError(false);
 
@@ -34,7 +38,26 @@ const Create = () => {
     }
 
     if (title && details) {
-      console.log(title + ", " + details + ", " + category);
+      setIsLoading(true);
+      setSubmitError();
+      try {
+        const response = await fetch("http://localhost:8000/notes", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title, details, category }),
+        });
+        if (!response.ok) {
+          const data = await response.json();
+          setSubmitError(data.message);
+        } else {
+          setCategory("");
+          setTitle("");
+          navigate("/");
+        }
+      } catch (err) {
+        setSubmitError(err);
+      }
+      setIsLoading(false);
     }
   };
   return (
@@ -92,10 +115,16 @@ const Create = () => {
           type="submit"
           // color="error"
           endIcon={<SendIcon />}
+          disabled={isLoading}
         >
           SUBMIT
         </Button>
       </form>
+      {submitError && (
+        <Typography variant="h5" sx={field} fontWeight={600} color="error">
+          {submitError}
+        </Typography>
+      )}
     </Container>
   );
 };
