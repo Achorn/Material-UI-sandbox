@@ -3,15 +3,18 @@ import Notes from "./pages/Notes";
 import Create from "./pages/Create";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Notes />}></Route>
-          <Route path="/create" element={<Create />}></Route>
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route exact path="/" element={<Notes />}></Route>
+            <Route path="/create" element={<Create />}></Route>
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </ThemeProvider>
   );
