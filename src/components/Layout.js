@@ -1,5 +1,7 @@
 import { AddCircleOutlineOutlined, SubjectOutlined } from "@mui/icons-material";
 import {
+  AppBar,
+  Avatar,
   Box,
   Drawer,
   List,
@@ -7,10 +9,12 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Toolbar,
   Typography,
 } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { format } from "date-fns";
+import { red } from "@mui/material/colors";
 const drawerWidth = 240;
 
 const drawerStyle = {
@@ -37,10 +41,22 @@ const Layout = ({ children }) => {
     },
   ];
 
+  const appBar = {
+    width: `calc(100% - ${drawerWidth}px)`,
+  };
+
   return (
     <Box sx={{ display: "flex" }}>
       {/* app bar */}
-
+      <AppBar sx={appBar} elevation={0}>
+        <Toolbar>
+          <Typography sx={{ flexGrow: 1 }}>
+            Today is {format(new Date(), " MMMM do y")}
+          </Typography>
+          <Typography>Mario</Typography>
+          <Avatar alt="profile pic" src="/profile.jpg" sx={{ ml: 2 }} />
+        </Toolbar>
+      </AppBar>
       {/* side drawer */}
       <Drawer sx={drawerStyle} variant="permanent" anchor="left">
         <div>
@@ -69,7 +85,8 @@ const Layout = ({ children }) => {
         </List>
       </Drawer>
       <Box sx={{ background: "#f9f9f9", width: "100%", padding: 3 }}>
-        {children}
+        <Toolbar />
+        <Box>{children}</Box>
       </Box>
     </Box>
   );
